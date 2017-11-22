@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ParcialModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tbCategoria">
+    <Key>
+      <PropertyRef Name="cateCodigo" />
+    </Key>
+    <Property Name="cateCodigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cateDescripcion" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbMembresia">
+    <Key>
+      <PropertyRef Name="membCodigo" />
+    </Key>
+    <Property Name="membCodigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="membDescripcion" Type="varchar" MaxLength="50" />
+    <Property Name="membCantidad" Type="int" />
+  </EntityType>
+  <EntityType Name="tbProducto">
+    <Key>
+      <PropertyRef Name="prodCodigo" />
+    </Key>
+    <Property Name="prodCodigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProdDescripcion" Type="varchar" MaxLength="50" />
+    <Property Name="prodCantidad" Type="int" />
+    <Property Name="prodValor" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="provIdentificacion" Type="bigint" />
+    <Property Name="cateCodigo" Type="int" />
+  </EntityType>
+  <EntityType Name="tbProveedor">
+    <Key>
+      <PropertyRef Name="provIdentificacion" />
+    </Key>
+    <Property Name="provIdentificacion" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="provNombres" Type="varchar" MaxLength="100" />
+    <Property Name="provApellidos" Type="varchar" MaxLength="100" />
+    <Property Name="provDireccion" Type="varchar" MaxLength="50" />
+    <Property Name="provTelefono" Type="varchar" MaxLength="50" />
+    <Property Name="provCorreo" Type="varchar" MaxLength="50" />
+    <Property Name="membCodigo" Type="int" />
+  </EntityType>
+  <Association Name="FK_tbProducto_tbCategoria">
+    <End Role="tbCategoria" Type="Self.tbCategoria" Multiplicity="0..1" />
+    <End Role="tbProducto" Type="Self.tbProducto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbCategoria">
+        <PropertyRef Name="cateCodigo" />
+      </Principal>
+      <Dependent Role="tbProducto">
+        <PropertyRef Name="cateCodigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbProducto_tbProveedor">
+    <End Role="tbProveedor" Type="Self.tbProveedor" Multiplicity="0..1" />
+    <End Role="tbProducto" Type="Self.tbProducto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbProveedor">
+        <PropertyRef Name="provIdentificacion" />
+      </Principal>
+      <Dependent Role="tbProducto">
+        <PropertyRef Name="provIdentificacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbProveedor_tbMembresia">
+    <End Role="tbMembresia" Type="Self.tbMembresia" Multiplicity="0..1" />
+    <End Role="tbProveedor" Type="Self.tbProveedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbMembresia">
+        <PropertyRef Name="membCodigo" />
+      </Principal>
+      <Dependent Role="tbProveedor">
+        <PropertyRef Name="membCodigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ParcialModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbCategoria" EntityType="Self.tbCategoria" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbMembresia" EntityType="Self.tbMembresia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbProducto" EntityType="Self.tbProducto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbProveedor" EntityType="Self.tbProveedor" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tbProducto_tbCategoria" Association="Self.FK_tbProducto_tbCategoria">
+      <End Role="tbCategoria" EntitySet="tbCategoria" />
+      <End Role="tbProducto" EntitySet="tbProducto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbProducto_tbProveedor" Association="Self.FK_tbProducto_tbProveedor">
+      <End Role="tbProveedor" EntitySet="tbProveedor" />
+      <End Role="tbProducto" EntitySet="tbProducto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbProveedor_tbMembresia" Association="Self.FK_tbProveedor_tbMembresia">
+      <End Role="tbMembresia" EntitySet="tbMembresia" />
+      <End Role="tbProveedor" EntitySet="tbProveedor" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2008
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parcial", "Parcial\Parcial.csproj", "{474382F3-CAE1-464F-8DBE-B1267A8D4526}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parcial.Logica", "Parcial.Logica\Parcial.Logica.csproj", "{29A4B489-8820-4A00-8CA8-DD5B2E814957}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{474382F3-CAE1-464F-8DBE-B1267A8D4526}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{474382F3-CAE1-464F-8DBE-B1267A8D4526}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{474382F3-CAE1-464F-8DBE-B1267A8D4526}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{474382F3-CAE1-464F-8DBE-B1267A8D4526}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29A4B489-8820-4A00-8CA8-DD5B2E814957}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29A4B489-8820-4A00-8CA8-DD5B2E814957}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29A4B489-8820-4A00-8CA8-DD5B2E814957}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29A4B489-8820-4A00-8CA8-DD5B2E814957}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8B090F2E-9454-4885-8AD1-8AEF1B3BAB61}
+	EndGlobalSection
+EndGlobal

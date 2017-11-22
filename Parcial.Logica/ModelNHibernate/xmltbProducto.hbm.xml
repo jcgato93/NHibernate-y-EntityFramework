@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Parcial.Logica.ModelNH.NHProducto, Parcial.Logica" table="tbProducto">
+    <id name="Codigo" column="prodCodigo" type="Int64">
+      <generator class="assigned"/>
+    </id>
+    <property name="Descripcion" column="propDescripcion" type="String" length="50"/>
+    <property name="Cantidad" column="propCantidad" type="Int64" />
+    <property name="Valor" column="propValor" type="Double" />
+    <property name="Identificacion" column="propIdentificacion" type="Int64" />
+    <property name="CodigoCat" column="cateCodigo" type="Int64" />
+  </class>
+</hibernate-mapping>

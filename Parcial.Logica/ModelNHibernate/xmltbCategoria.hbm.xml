@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Parcial.Logica.ModelNH.NHCategoria, Parcial.Logica" table="tbCategoria">
+    <id name="Codigo" column="cateCodigo" type="Int32">
+      <generator class="native"/><!--assigned-->
+    </id>
+    <property name="Descripcion" column="cateDescripcion" type="String" length="50"/>    
+  </class>
+</hibernate-mapping>
