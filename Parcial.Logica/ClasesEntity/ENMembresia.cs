@@ -41,6 +41,37 @@ namespace Parcial.Logica.ClasesEntity
 
         }
 
+        
+        /// <summary>
+        /// Borra una Membresia
+        /// </summary>
+        /// <param name="membCodigo"></param>
+        /// <returns></returns>
+        public static string DeleteMembresia(int membCodigo)
+        {
+            string result = "";
+
+            try
+            {
+                tbMembresia memb = (from tb in con.tbMembresia
+                                    where tb.membCodigo == membCodigo
+                                    select tb).First();
+
+
+
+
+                con.tbMembresia.Remove(memb);
+                con.SaveChanges();
+
+                result = "Operacion Exitosa";
+            }
+            catch (Exception ex)
+            {
+
+                result = "Fallo de la Operacion";
+            }
+            return result;
+        }
 
 
         /// <summary>

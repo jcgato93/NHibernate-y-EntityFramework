@@ -10,6 +10,19 @@
     <title>Parcial Web</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    
+ <style type="text/css">     
+    .popUpStyle
+    {
+        font: normal 11px auto "Trebuchet MS", Verdana;   
+        background-color: #ffffff;
+        color: #4f6b72; 
+        padding:6px;     
+        filter: alpha(opacity=80);
+        opacity: 0.8;
+    }
+    
+</style>
 </head>
 <body>
     <form id="form1" runat="server">

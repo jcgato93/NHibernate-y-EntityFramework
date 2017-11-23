@@ -140,5 +140,17 @@ namespace Parcial.Logica.ClasesNH
             catch (Exception ex) { throw ex; }
         }
 
+
+        public static NHProveedor ConsultarCategorias(int provCodigo)
+        {
+
+            try
+            {
+                NHProveedor prov = (NHProveedor)mySession.Load(typeof(NHProveedor), Convert.ToInt32(provCodigo));
+                return prov;
+            }
+            catch (Exception ex) { throw ex; }
+        }
+
     }
 }

@@ -53,6 +53,7 @@ namespace Parcial.Logica.ClasesNH
                 result= "Fallo la operacion";
                 throw ex;
             }
+          
 
             return result;
         }
@@ -70,7 +71,7 @@ namespace Parcial.Logica.ClasesNH
             {
                 using (mySession.BeginTransaction())
                 {
-                    NHCategoria cate = (NHCategoria)mySession.Load(typeof(NHCategoria), Convert.ToInt64(categoria.Codigo));
+                    NHCategoria cate = (NHCategoria)mySession.Load(typeof(NHCategoria), Convert.ToInt32(categoria.Codigo));
 
                     cate.Descripcion = categoria.Descripcion;
 
@@ -84,6 +85,7 @@ namespace Parcial.Logica.ClasesNH
                 result = "Fallo la Operacion";
                 throw ex;
             }
+        
 
             return result;
         }
@@ -101,7 +103,7 @@ namespace Parcial.Logica.ClasesNH
             {
                 using (mySession.BeginTransaction())
                 {
-                    NHCategoria cate = (NHCategoria)mySession.Load(typeof(NHCategoria), Convert.ToInt64(cateCodigo));
+                    NHCategoria cate = (NHCategoria)mySession.Load(typeof(NHCategoria), Convert.ToInt32(cateCodigo));
                     mySession.Delete(cate);
                     mySession.Transaction.Commit();
                     result = "Operacion Exitosa";
@@ -112,6 +114,7 @@ namespace Parcial.Logica.ClasesNH
                 result = "Fallo la Operacion";
                 throw ex;
             }
+          
 
             return result;
         }
@@ -130,6 +133,25 @@ namespace Parcial.Logica.ClasesNH
                 return categoria;
             }
             catch (Exception ex) { throw ex; }
+            
+        }
+
+        /// <summary>
+        /// Retorna la informacion de una categoria por id
+        /// </summary>
+        /// <param name="cateCodigo"></param>
+        /// <returns></returns>
+        public static NHCategoria ConsultarCategorias(int cateCodigo)
+        {
+            
+            try
+            {
+                NHCategoria categoria = (NHCategoria)mySession.Load(typeof(NHCategoria), Convert.ToInt32(cateCodigo));
+                return categoria;
+                
+            }
+            catch (Exception ex) { throw ex; }
+         
         }
     }
 }

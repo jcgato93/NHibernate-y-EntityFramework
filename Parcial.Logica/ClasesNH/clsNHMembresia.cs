@@ -133,5 +133,22 @@ namespace Parcial.Logica.ClasesNH
             catch (Exception ex) { throw ex; }
         }
 
+
+        /// <summary>
+        /// Retorna la informacion de una Membresia por id
+        /// </summary>
+        /// <param name="cateCodigo"></param>
+        /// <returns></returns>
+        public static NHMembresia ConsultarCategorias(int membCodigo)
+        {
+
+            try
+            {
+                NHMembresia membresia = (NHMembresia)mySession.Load(typeof(NHMembresia), Convert.ToInt32(membCodigo));
+                return membresia;
+            }
+            catch (Exception ex) { throw ex; }
+        }
+
     }
 }

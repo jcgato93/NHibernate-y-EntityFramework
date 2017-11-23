@@ -138,5 +138,21 @@ namespace Parcial.Logica.ClasesNH
             catch (Exception ex) { throw ex; }
         }
 
+        /// <summary>
+        /// Retorna un producto
+        /// </summary>
+        /// <param name="prodCodigo"></param>
+        /// <returns></returns>
+        public static NHProducto ConsultarCategorias(int prodCodigo)
+        {
+
+            try
+            {
+                NHProducto producto = (NHProducto)mySession.Load(typeof(NHProducto), Convert.ToInt32(prodCodigo));
+                return producto;
+            }
+            catch (Exception ex) { throw ex; }
+        }
+
     }
 }

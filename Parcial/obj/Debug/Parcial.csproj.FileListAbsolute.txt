@@ -1,5 +1,3 @@
-C:\Users\Workgroup\Documents\Visual Studio 2017\Projects\Parcial\Parcial\obj\Debug\Parcial.csprojResolveAssemblyReference.cache
-C:\Users\Workgroup\Documents\Visual Studio 2017\Projects\Parcial\Parcial\obj\Debug\Parcial.csproj.CoreCompileInputs.cache
 C:\Users\Workgroup\Documents\Visual Studio 2017\Projects\Parcial\Parcial\bin\Parcial.dll.config
 C:\Users\Workgroup\Documents\Visual Studio 2017\Projects\Parcial\Parcial\bin\Parcial.dll
 C:\Users\Workgroup\Documents\Visual Studio 2017\Projects\Parcial\Parcial\bin\Parcial.pdb
@@ -23,5 +21,7 @@ C:\Users\Workgroup\Documents\Visual Studio 2017\Projects\Parcial\Parcial\bin\Mic
 C:\Users\Workgroup\Documents\Visual Studio 2017\Projects\Parcial\Parcial\bin\NHibernate.xml
 C:\Users\Workgroup\Documents\Visual Studio 2017\Projects\Parcial\Parcial\bin\Remotion.Linq.xml
 C:\Users\Workgroup\Documents\Visual Studio 2017\Projects\Parcial\Parcial\bin\Remotion.Linq.EagerFetching.xml
+C:\Users\Workgroup\Documents\Visual Studio 2017\Projects\Parcial\Parcial\obj\Debug\Parcial.csprojResolveAssemblyReference.cache
+C:\Users\Workgroup\Documents\Visual Studio 2017\Projects\Parcial\Parcial\obj\Debug\Parcial.csproj.CoreCompileInputs.cache
 C:\Users\Workgroup\Documents\Visual Studio 2017\Projects\Parcial\Parcial\obj\Debug\Parcial.dll
 C:\Users\Workgroup\Documents\Visual Studio 2017\Projects\Parcial\Parcial\obj\Debug\Parcial.pdb
