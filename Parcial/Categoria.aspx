@@ -78,5 +78,5 @@
     </div>
 
 
-    <%-- /Modal Prescription--%>
+    <%-- /Modal --%>
 </asp:Content>

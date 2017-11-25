@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
   <class name="Parcial.Logica.ModelNH.NHProveedor, Parcial.Logica" table="tbProveedor">
-    <id name="Identificacion" column="provIdentificacion" type="Int64">
-      <generator class="assigned"/>
+    <id name="Identificacion" column="provIdentificacion" type="Int32">
+      <generator class="native"/>
     </id>
     <property name="Nombres" column="provNombres" type="String" length="100"/>
     <property name="Apellidos" column="provApellidos" type="String"  length="100"/>
     <property name="Direccion" column="provDireccion" type="String"  length="50"/>
     <property name="Telefono" column="provTelefono" type="String"  length="50"/>
     <property name="Correo" column="provCorreo" type="String"  length="50"/>
-    <property name="CodigoMemb" column="membCodigo" type="Int64" />
+    <property name="CodigoMemb" column="membCodigo" type="Int32" />
   </class>
 </hibernate-mapping>

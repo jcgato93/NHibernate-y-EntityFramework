@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 
 namespace Parcial.Logica.ClasesEntity
 {
@@ -151,6 +152,32 @@ namespace Parcial.Logica.ClasesEntity
 
             return memb;
         }
+
+
+        /// <summary>
+        /// Llena un DropDownList con todos los tipos de membresias
+        /// </summary>
+        /// <param name="ddl"></param>
+        public static void fillDropDownConMembresias(ref DropDownList ddl)
+        {
+            var memb = (from m in con.tbMembresia
+                        select new
+                        {
+                            text = m.membDescripcion,
+                            value = m.membCodigo
+                        }).ToList();
+
+            ddl.DataSource = memb;
+            ddl.DataTextField = "text";
+            ddl.DataValueField = "value";
+            ddl.DataBind();
+
+
+            ddl.Items.Insert(0,new ListItem("Todos","-1"));
+
+
+        }
+
 
     }
 }

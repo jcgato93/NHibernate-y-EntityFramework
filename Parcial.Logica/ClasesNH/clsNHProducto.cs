@@ -43,7 +43,7 @@ namespace Parcial.Logica.ClasesNH
                         Cantidad= producto.Cantidad,
                         Descripcion=producto.Descripcion,
                         Valor=producto.Valor,
-                        Identificacion=producto.Identificacion
+                        IdentificacionProv=producto.IdentificacionProv
                     };
 
                     mySession.Save(prod);
@@ -66,19 +66,19 @@ namespace Parcial.Logica.ClasesNH
         /// </summary>
         /// <param name="categoria"></param>
         /// <returns></returns>
-        public static string UpdateProducto(NHProducto producto)
+        public static string UpdateProducto(int prodCodigo,NHProducto producto)
         {
             string result = "";
             try
             {
                 using (mySession.BeginTransaction())
                 {
-                    NHProducto prod = (NHProducto)mySession.Load(typeof(NHProducto), Convert.ToInt64(producto.Codigo));
+                    NHProducto prod = (NHProducto)mySession.Load(typeof(NHProducto), Convert.ToInt32(prodCodigo));
                     prod.CodigoCat = producto.CodigoCat;
                     prod.Cantidad = producto.Cantidad;
                     prod.Descripcion = producto.Descripcion;
                     prod.Valor = producto.Valor;
-                    prod.Identificacion = producto.Identificacion;
+                    prod.IdentificacionProv = producto.IdentificacionProv;
 
                     mySession.Update(prod);
                     mySession.Transaction.Commit();
@@ -107,7 +107,7 @@ namespace Parcial.Logica.ClasesNH
             {
                 using (mySession.BeginTransaction())
                 {
-                    NHProducto prod = (NHProducto)mySession.Load(typeof(NHProducto), Convert.ToInt64(prodCodigo));
+                    NHProducto prod = (NHProducto)mySession.Load(typeof(NHProducto), Convert.ToInt32(prodCodigo));
                     mySession.Delete(prod);
                     mySession.Transaction.Commit();
                     result = "Operacion Exitosa";
@@ -134,6 +134,21 @@ namespace Parcial.Logica.ClasesNH
             {
                 IList productos = mySession.CreateCriteria(typeof(NHProducto)).List();
                 return productos;
+            }
+            catch (Exception ex) { throw ex; }
+        }
+
+        /// <summary>
+        /// Retorna un Producto por codigo
+        /// </summary>
+        /// <param name="prodCodigo"></param>
+        /// <returns></returns>
+        public static NHProducto ConsultarProductosPorCodigo(int prodCodigo)
+        {
+            try
+            {
+                NHProducto prod = (NHProducto)mySession.Load(typeof(NHProducto), Convert.ToInt32(prodCodigo));
+                return prod;
             }
             catch (Exception ex) { throw ex; }
         }

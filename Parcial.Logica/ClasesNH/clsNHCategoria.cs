@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 
 namespace Parcial.Logica.ClasesNH
 {
@@ -152,6 +153,28 @@ namespace Parcial.Logica.ClasesNH
             }
             catch (Exception ex) { throw ex; }
          
+        }
+
+
+        /// <summary>
+        /// Llena un DropDownList con el listado de las categorias         
+        /// </summary>
+        /// <param name="ddl"></param>
+        public static void fillDropDownConCategorias(ref DropDownList ddl)
+        {
+            try
+            {
+                IList categoria = mySession.CreateCriteria(typeof(NHCategoria)).List();
+
+                ddl.DataSource=categoria;
+                ddl.DataTextField = "Descripcion";
+                ddl.DataValueField = "Codigo";
+                ddl.DataBind();
+
+                ddl.Items.Insert(0,new ListItem("Todos","-1"));
+            }
+            catch (Exception ex) { throw ex; }
+
         }
     }
 }

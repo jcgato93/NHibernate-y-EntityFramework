@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 
 namespace Parcial.Logica.ClasesNH
 {
@@ -37,16 +38,15 @@ namespace Parcial.Logica.ClasesNH
             {
                 using (mySession.BeginTransaction())
                 {
-                    NHProveedor prov = new NHProveedor
-                    {
-                        CodigoMemb = proveedor.CodigoMemb,
-                        Apellidos=proveedor.Apellidos,
-                        Correo=proveedor.Correo,
-                        Direccion=proveedor.Direccion,
-                        Nombres=proveedor.Nombres,
-                        Telefono=proveedor.Telefono
-                     
-                    };
+                    NHProveedor prov = new NHProveedor();
+
+                    prov.CodigoMemb = proveedor.CodigoMemb;
+                    prov.Apellidos = proveedor.Apellidos;
+                    prov.Correo = proveedor.Correo;
+                    prov.Direccion = proveedor.Direccion;
+                    prov.Nombres = proveedor.Nombres;
+                    prov.Telefono = proveedor.Telefono;                     
+                    
 
                     mySession.Save(prov);
                     mySession.Transaction.Commit();
@@ -68,14 +68,14 @@ namespace Parcial.Logica.ClasesNH
        /// </summary>
        /// <param name="producto"></param>
        /// <returns></returns>
-        public static string UpdateProveedor(NHProveedor proveedor)
+        public static string UpdateProveedor(int provCodigo,NHProveedor proveedor)
         {
             string result = "";
             try
             {
                 using (mySession.BeginTransaction())
                 {
-                    NHProveedor prov = (NHProveedor)mySession.Load(typeof(NHProveedor), Convert.ToInt64(proveedor.Identificacion));
+                    NHProveedor prov = (NHProveedor)mySession.Load(typeof(NHProveedor), Convert.ToInt32(provCodigo));
                     prov.CodigoMemb = proveedor.CodigoMemb;
                     prov.Apellidos = proveedor.Apellidos;
                     prov.Correo = proveedor.Correo;
@@ -110,7 +110,7 @@ namespace Parcial.Logica.ClasesNH
             {
                 using (mySession.BeginTransaction())
                 {
-                    NHProveedor prov = (NHProveedor)mySession.Load(typeof(NHProveedor), Convert.ToInt64(provIdentificacion));
+                    NHProveedor prov = (NHProveedor)mySession.Load(typeof(NHProveedor), Convert.ToInt32(provIdentificacion));
                     mySession.Delete(prov);
                     mySession.Transaction.Commit();
                     result = "Operacion Exitosa";
@@ -141,7 +141,34 @@ namespace Parcial.Logica.ClasesNH
         }
 
 
-        public static NHProveedor ConsultarCategorias(int provCodigo)
+        /// <summary>
+        /// LLena un DropDownList con el listado de proveedores
+        /// </summary>
+        /// <param name="ddl"></param>
+        public static void fillDropDownConProveedores(ref DropDownList ddl)
+        {
+            try
+            {
+                IList categoria = mySession.CreateCriteria(typeof(NHProveedor)).List();                
+
+                ddl.DataSource = categoria;
+                ddl.DataTextField = "Nombres";
+                ddl.DataValueField = "Identificacion";
+                ddl.DataBind();
+
+                ddl.Items.Insert(0,new ListItem("Todos", "-1"));
+            }
+            catch (Exception ex) { throw ex; }
+
+        }
+
+
+        /// <summary>
+        /// Obtener proveedor por codigo
+        /// </summary>
+        /// <param name="provCodigo"></param>
+        /// <returns></returns>
+        public static NHProveedor ConsultarProveedorPorCodigo(int provCodigo)
         {
 
             try
