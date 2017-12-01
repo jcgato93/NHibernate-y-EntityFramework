@@ -30,17 +30,17 @@
       <PropertyRef Name="prodCodigo" />
     </Key>
     <Property Name="prodCodigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ProdDescripcion" Type="varchar" MaxLength="50" />
+    <Property Name="prodDescripcion" Type="varchar" MaxLength="50" />
     <Property Name="prodCantidad" Type="int" />
-    <Property Name="prodValor" Type="decimal" Precision="18" Scale="2" />
-    <Property Name="provIdentificacion" Type="bigint" />
+    <Property Name="prodValor" Type="int" />
+    <Property Name="provIdentificacion" Type="int" />
     <Property Name="cateCodigo" Type="int" />
   </EntityType>
   <EntityType Name="tbProveedor">
     <Key>
       <PropertyRef Name="provIdentificacion" />
     </Key>
-    <Property Name="provIdentificacion" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="provIdentificacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="provNombres" Type="varchar" MaxLength="100" />
     <Property Name="provApellidos" Type="varchar" MaxLength="100" />
     <Property Name="provDireccion" Type="varchar" MaxLength="50" />

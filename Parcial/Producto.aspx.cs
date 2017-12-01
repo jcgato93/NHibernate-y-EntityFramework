@@ -127,6 +127,13 @@ namespace Parcial
             BindGrid();
 
         }
+        
+        //Buscar producto por filtro
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            Logica.ClasesEntity.ENProducto.filtroProducto(ref gridProducto,int.Parse(ddlProveedorBuscar.SelectedValue),int.Parse(ddlCategoriaBuscar.SelectedValue));
+        }
+
 
         //=========  METODOS  ==========================================
 
@@ -149,6 +156,11 @@ namespace Parcial
             Logica.ClasesNH.clsNHCategoria.fillDropDownConCategorias(ref ddlCategoria);
             Logica.ClasesNH.clsNHProveedor.fillDropDownConProveedores(ref ddlProveedor);
 
+
+            Logica.ClasesNH.clsNHCategoria.fillDropDownConCategorias(ref ddlCategoriaBuscar);
+            Logica.ClasesNH.clsNHProveedor.fillDropDownConProveedores(ref ddlProveedorBuscar);
+
+
             txtCantidad.Text = string.Empty;
             txtDescripcion.Text = string.Empty;
             txtValor.Text = string.Empty;
@@ -156,5 +168,7 @@ namespace Parcial
 
             BindGrid();
         }
+
+      
     }
 }

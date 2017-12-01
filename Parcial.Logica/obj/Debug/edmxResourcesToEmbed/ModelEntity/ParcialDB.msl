@@ -33,7 +33,7 @@
       <EntityTypeMapping TypeName="ParcialModel.tbProducto">
         <MappingFragment StoreEntitySet="tbProducto">
           <ScalarProperty Name="prodCodigo" ColumnName="prodCodigo" />
-          <ScalarProperty Name="ProdDescripcion" ColumnName="ProdDescripcion" />
+          <ScalarProperty Name="prodDescripcion" ColumnName="prodDescripcion" />
           <ScalarProperty Name="prodCantidad" ColumnName="prodCantidad" />
           <ScalarProperty Name="prodValor" ColumnName="prodValor" />
           <ScalarProperty Name="provIdentificacion" ColumnName="provIdentificacion" />

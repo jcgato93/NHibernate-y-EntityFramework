@@ -20,7 +20,7 @@ namespace Parcial.Logica.ModelEntity
             this.tbProducto = new HashSet<tbProducto>();
         }
     
-        public long provIdentificacion { get; set; }
+        public int provIdentificacion { get; set; }
         public string provNombres { get; set; }
         public string provApellidos { get; set; }
         public string provDireccion { get; set; }

@@ -32,10 +32,10 @@
       <PropertyRef Name="prodCodigo" />
     </Key>
     <Property Name="prodCodigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ProdDescripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="prodDescripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="prodCantidad" Type="Int32" />
-    <Property Name="prodValor" Type="Decimal" Precision="18" Scale="2" />
-    <Property Name="provIdentificacion" Type="Int64" />
+    <Property Name="prodValor" Type="Int32" />
+    <Property Name="provIdentificacion" Type="Int32" />
     <Property Name="cateCodigo" Type="Int32" />
     <NavigationProperty Name="tbCategoria" Relationship="Self.FK_tbProducto_tbCategoria" FromRole="tbProducto" ToRole="tbCategoria" />
     <NavigationProperty Name="tbProveedor" Relationship="Self.FK_tbProducto_tbProveedor" FromRole="tbProducto" ToRole="tbProveedor" />
@@ -44,7 +44,7 @@
     <Key>
       <PropertyRef Name="provIdentificacion" />
     </Key>
-    <Property Name="provIdentificacion" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="provIdentificacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="provNombres" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="provApellidos" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="provDireccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />

@@ -19,3 +19,4 @@ C:\Users\Workgroup\Documents\Visual Studio 2017\Projects\Parcial\Parcial.Logica\
 C:\Users\Workgroup\Documents\Visual Studio 2017\Projects\Parcial\Parcial.Logica\obj\Debug\Parcial.Logica.csproj.CoreCompileInputs.cache
 C:\Users\Workgroup\Documents\Visual Studio 2017\Projects\Parcial\Parcial.Logica\obj\Debug\Parcial.Logica.dll
 C:\Users\Workgroup\Documents\Visual Studio 2017\Projects\Parcial\Parcial.Logica\obj\Debug\Parcial.Logica.pdb
+C:\Users\Workgroup\Documents\Visual Studio 2017\Projects\Parcial\Parcial.Logica\obj\Debug\Parcial.Logica.csprojResolveAssemblyReference.cache

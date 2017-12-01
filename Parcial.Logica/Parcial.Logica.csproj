@@ -72,14 +72,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClasesEntity\ENMembresia.cs" />
+    <Compile Include="ClasesEntity\ENProducto.cs" />
     <Compile Include="ClasesNH\clsNHCategoria.cs" />
     <Compile Include="ClasesNH\clsNHMembresia.cs" />
     <Compile Include="ClasesNH\clsNHProducto.cs" />
     <Compile Include="ClasesNH\clsNHProveedor.cs" />
-    <Compile Include="ModelNH\NHCategoria.cs" />
-    <Compile Include="ModelNH\NHMembresia.cs" />
-    <Compile Include="ModelNH\NHProducto.cs" />
-    <Compile Include="ModelNH\NHProveedor.cs" />
     <Compile Include="ModelEntity\ParcialDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -110,6 +107,10 @@
     <Compile Include="ModelEntity\tbProveedor.cs">
       <DependentUpon>ParcialDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="ModelNH\NHCategoria.cs" />
+    <Compile Include="ModelNH\NHMembresia.cs" />
+    <Compile Include="ModelNH\NHProducto.cs" />
+    <Compile Include="ModelNH\NHProveedor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -124,6 +125,15 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ModelNHibernate\xmltbCategoria.hbm.xml" />
+    <EmbeddedResource Include="ModelNHibernate\xmltbMembresia.hbm.xml" />
+    <EmbeddedResource Include="ModelNHibernate\xmltbProducto.hbm.xml" />
+    <EmbeddedResource Include="ModelNHibernate\xmltbProveedor.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="ModelEntity\ParcialDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ParcialDB.edmx</DependentUpon>
@@ -134,14 +144,6 @@
       <DependentUpon>ParcialDB.edmx</DependentUpon>
       <LastGenOutput>ParcialDB.cs</LastGenOutput>
     </Content>
-    <EmbeddedResource Include="ModelNHibernate\xmltbCategoria.hbm.xml" />
-    <EmbeddedResource Include="ModelNHibernate\xmltbMembresia.hbm.xml" />
-    <EmbeddedResource Include="ModelNHibernate\xmltbProducto.hbm.xml" />
-    <EmbeddedResource Include="ModelNHibernate\xmltbProveedor.hbm.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -35,17 +35,17 @@
             <PropertyRef Name="prodCodigo" />
           </Key>
           <Property Name="prodCodigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ProdDescripcion" Type="varchar" MaxLength="50" />
+          <Property Name="prodDescripcion" Type="varchar" MaxLength="50" />
           <Property Name="prodCantidad" Type="int" />
-          <Property Name="prodValor" Type="decimal" Precision="18" Scale="2" />
-          <Property Name="provIdentificacion" Type="bigint" />
+          <Property Name="prodValor" Type="int" />
+          <Property Name="provIdentificacion" Type="int" />
           <Property Name="cateCodigo" Type="int" />
         </EntityType>
         <EntityType Name="tbProveedor">
           <Key>
             <PropertyRef Name="provIdentificacion" />
           </Key>
-          <Property Name="provIdentificacion" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="provIdentificacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="provNombres" Type="varchar" MaxLength="100" />
           <Property Name="provApellidos" Type="varchar" MaxLength="100" />
           <Property Name="provDireccion" Type="varchar" MaxLength="50" />
@@ -145,10 +145,10 @@
             <PropertyRef Name="prodCodigo" />
           </Key>
           <Property Name="prodCodigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ProdDescripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="prodDescripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="prodCantidad" Type="Int32" />
-          <Property Name="prodValor" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="provIdentificacion" Type="Int64" />
+          <Property Name="prodValor" Type="Int32" />
+          <Property Name="provIdentificacion" Type="Int32" />
           <Property Name="cateCodigo" Type="Int32" />
           <NavigationProperty Name="tbCategoria" Relationship="Self.FK_tbProducto_tbCategoria" FromRole="tbProducto" ToRole="tbCategoria" />
           <NavigationProperty Name="tbProveedor" Relationship="Self.FK_tbProducto_tbProveedor" FromRole="tbProducto" ToRole="tbProveedor" />
@@ -157,7 +157,7 @@
           <Key>
             <PropertyRef Name="provIdentificacion" />
           </Key>
-          <Property Name="provIdentificacion" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="provIdentificacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="provNombres" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="provApellidos" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="provDireccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -260,7 +260,7 @@
             <EntityTypeMapping TypeName="ParcialModel.tbProducto">
               <MappingFragment StoreEntitySet="tbProducto">
                 <ScalarProperty Name="prodCodigo" ColumnName="prodCodigo" />
-                <ScalarProperty Name="ProdDescripcion" ColumnName="ProdDescripcion" />
+                <ScalarProperty Name="prodDescripcion" ColumnName="prodDescripcion" />
                 <ScalarProperty Name="prodCantidad" ColumnName="prodCantidad" />
                 <ScalarProperty Name="prodValor" ColumnName="prodValor" />
                 <ScalarProperty Name="provIdentificacion" ColumnName="provIdentificacion" />

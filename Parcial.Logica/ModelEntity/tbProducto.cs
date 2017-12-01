@@ -15,10 +15,10 @@ namespace Parcial.Logica.ModelEntity
     public partial class tbProducto
     {
         public int prodCodigo { get; set; }
-        public string ProdDescripcion { get; set; }
+        public string prodDescripcion { get; set; }
         public Nullable<int> prodCantidad { get; set; }
-        public Nullable<decimal> prodValor { get; set; }
-        public Nullable<long> provIdentificacion { get; set; }
+        public Nullable<int> prodValor { get; set; }
+        public Nullable<int> provIdentificacion { get; set; }
         public Nullable<int> cateCodigo { get; set; }
     
         public virtual tbCategoria tbCategoria { get; set; }

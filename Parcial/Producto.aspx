@@ -34,10 +34,31 @@
             <asp:DropDownList ID="ddlCategoria" CssClass="form-control" runat="server"></asp:DropDownList>            
         </div>
 
-        <div class="col-lg-2">
+        <div class="col-lg-12">
             <asp:Button ID="btnAdd" CssClass="btn btn-success" runat="server" Text="Agregar" OnClick="btnAdd_Click" ValidationGroup="grupo1" />
         </div>
     </div>
+
+    <%-- filtros de busqueda --%>
+    <div class="row" style="margin-top:5em; margin-bottom:3em">
+        <div class="col-lg-12" style="margin-bottom:2em"><h3>Buscar</h3></div>
+
+           <div class="col-lg-5">
+            <h3><strong>Proveedor</strong></h3>
+            <asp:DropDownList ID="ddlProveedorBuscar" CssClass="form-control" runat="server"></asp:DropDownList>            
+        </div>
+
+        <div class="col-lg-5">
+            <h3><strong>Categoria</strong></h3>
+            <asp:DropDownList ID="ddlCategoriaBuscar" CssClass="form-control" runat="server"></asp:DropDownList>            
+        </div>
+
+        <div class="col-lg-12">
+            <asp:Button ID="btnBuscar" CssClass="btn btn-success" runat="server" Text="Buscar" OnClick="btnBuscar_Click"/>
+        </div>
+        
+    </div>
+
 
     <div class="row">
         <asp:GridView ID="gridProducto" runat="server" AllowPaging="True" AllowSorting="True" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="5" CssClass="table table-hover table-responsive" PageSize="5" OnRowCommand="gridCategorias_RowCommand" OnPageIndexChanging="gridCategorias_PageIndexChanging" >
@@ -109,8 +130,8 @@
    
     </div>
                 
-                <%-- Body --%>
-                <asp:Button ID="btnUpdate" runat="server" Text="Actulizar" CssClass="btn btn-primary" Width="100px" OnClick="btnOk_Click"/>
+      <%-- Body --%>
+    <asp:Button ID="btnUpdate" runat="server" Text="Actulizar" CssClass="btn btn-primary" Width="100px" OnClick="btnOk_Click"/>
                
                 </div>
               <div class="container">
